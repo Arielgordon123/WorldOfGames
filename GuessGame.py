@@ -11,7 +11,7 @@ class GuessGame:
         self.secret = random.randint(1, self.difficulty)
 
     def get_guess_from_user(self):
-        return get_choise(min=1, max=self.difficulty+1)
+        return get_choise(min=1, max=self.difficulty, message="I picked a number, can you guess it? ")
 
     def compare_results(self, guess):
         return guess == self.secret
