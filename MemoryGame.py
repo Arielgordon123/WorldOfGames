@@ -12,7 +12,7 @@ class MemoryGame:
         return [random.randint(1, 101) for i in range(self.difficulty)]
 
     def _get_list_from_user(self):
-        return [get_choise(1, 101) for i in range(self.difficulty)]
+        return [get_choise(1, 101, "enter {num} num: ".format(num=i+1)) for i in range(self.difficulty)]
 
     def _is_list_equal(self, userList):
         equal = True
@@ -28,7 +28,7 @@ class MemoryGame:
 
     def play(self):
         clear()
-        print("numbers to remember:")
+        print("Pay attention!, those are the numbers to remember:")
         for num in self.randomList:
             print(num)
         sleep(0.7)
