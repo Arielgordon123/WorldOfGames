@@ -10,9 +10,9 @@ def clear():
         system('clear')
 
 
-def get_choise(min=1, max=3, message="Please enter your choise: "):
+def get_choise(min=1, max=3, message="Please enter your choise: ", type=int):
     try:
-        choise = int(input(message))
+        choise = type(input(message))
         if choise > max or choise < min:
             raise ValueError
         return choise
