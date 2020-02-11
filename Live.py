@@ -5,7 +5,10 @@ from utils import get_choise
 
 
 def welcome(name):
-    return "Hello {name} and welcome to the World of Games (WoG).\nHere you can find many cool games to play.".format(name=name)
+    line1 = "Hello {name} and welcome to the World of Games (WoG).".format(
+        name=name)
+    line2 = "\nHere you can find many cool games to play."
+    return line1 + line2
 
 
 def load_game():
