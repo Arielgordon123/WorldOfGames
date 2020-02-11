@@ -1,4 +1,4 @@
-
+from utils import get_choise
 
 def welcome(name):
     return "Hello {name} and welcome to the World of Games (WoG).\nHere you can find many cool games to play.".format(name=name)
@@ -13,14 +13,3 @@ def load_game():
     choise = get_choise(1, len(game_options))
     print("Please choose game difficulty from 1 to 5:")
     difficulty = get_choise(1, 5)
-
-
-def get_choise(min=1, max=3):
-    try:
-        choise = int(input("Please enter your choise: "))
-        if choise > max or choise < min:
-            raise ValueError
-        return choise
-    except ValueError:
-        print("not a valid choise, please try again")
-        return get_choise(min, max)
