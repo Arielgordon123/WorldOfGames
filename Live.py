@@ -21,6 +21,3 @@ def load_game():
         print("you Won!")
     else:
         print("you lose, try again")
-
-
-load_game()
