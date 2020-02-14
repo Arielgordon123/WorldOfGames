@@ -1,15 +1,19 @@
 import requests
 import random
+from Game import Game
 from utils import get_choise, clear
 
 
-class CurrencyRouletteGame:
+class CurrencyRouletteGame(Game):
 
     _api_url = "https://api.exchangeratesapi.io/latest?symbols=ILS&base=USD"
 
     def __init__(self, difficulty):
-        self.difficulty = difficulty
+        super().__init__(difficulty)
         self.interval = self._get_money_interval()
+
+    def __str__(self):
+        return self.get_description()
 
     @staticmethod
     def get_description():
@@ -22,7 +26,7 @@ class CurrencyRouletteGame:
         return {"min": ils_usd_rate * (total - (5 - self.difficulty)),
                 "max": ils_usd_rate * (total + (5 - self.difficulty))}
 
-    def _get_guess_from_user(self):
+    def get_user_input(self):
         message = "could you geuss the value of x USD in ILS? "
         return get_choise(min=1, max=1000, message=message, type=float)
 
@@ -33,5 +37,5 @@ class CurrencyRouletteGame:
 
     def play(self):
         clear()
-        user_guess = self._get_guess_from_user()
+        user_guess = self.get_user_input()
         return self._compare_results(user_guess)
