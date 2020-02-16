@@ -1,9 +1,8 @@
-import pytest
+from GuessGame import GuessGame
+import pytest  # noqa: F401
 import sys
 import os
 sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/.."))
-
-from GuessGame import GuessGame
 
 
 class TestGuessGame:

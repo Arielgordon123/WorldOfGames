@@ -1,8 +1,8 @@
-import pytest
+from CurrencyRouletteGame import CurrencyRouletteGame
+import pytest  # noqa: F401
 import sys
 import os
 sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/.."))
-from CurrencyRouletteGame import CurrencyRouletteGame
 
 
 class TestCurrencyRouletteGame:
@@ -13,7 +13,8 @@ class TestCurrencyRouletteGame:
         assert isinstance(min_intervel, float)
 
     def test_description(self):
-        assert CurrencyRouletteGame.get_description().startswith("Currency Roulette")
+        assert CurrencyRouletteGame.get_description().startswith(
+            "Currency Roulette")
 
     def test_compare_results(self):
         game = CurrencyRouletteGame(1)

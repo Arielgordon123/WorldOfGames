@@ -1,9 +1,8 @@
-import pytest
+from MemoryGame import MemoryGame
+import pytest  # noqa: F401
 import sys
 import os
 sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/.."))
-
-from MemoryGame import MemoryGame
 
 
 class TestMemoryGame:

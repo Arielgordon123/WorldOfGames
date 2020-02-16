@@ -1,11 +1,10 @@
-import pytest
-import mock
+import io
+import utils
+import pytest  # noqa: F401
+import mock  # noqa: F401
 import sys
 import os
 sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/.."))
-
-import utils
-import io
 
 
 class TestUtils:
