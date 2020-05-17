@@ -1,5 +1,8 @@
 from os import system, name
 
+SCORES_FILE_NAME = "Scores.txt"
+BAD_RETURN_CODE = 500
+
 
 def clear():
     # for windows

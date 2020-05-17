@@ -2,6 +2,7 @@ from GuessGame import GuessGame
 from CurrencyRouletteGame import CurrencyRouletteGame
 from MemoryGame import MemoryGame
 from utils import get_choise
+from Score import add_score
 
 
 def welcome(name):
@@ -21,6 +22,7 @@ def load_game():
         min=1, max=5, message="Please choose game difficulty from 1 to 5: ")
     result = games[choise-1](difficulty).play()
     if result:
+        add_score(difficulty)
         print("you Won!")
     else:
         print("you lose, try again")
