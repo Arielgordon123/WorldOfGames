@@ -3,4 +3,4 @@ services:
   mainscore:
     build: .
     ports:
-      - "5500:5000"
+      - "8777:5000"
