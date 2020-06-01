@@ -10,7 +10,8 @@ flask = "*"
 pytest = "*"
 mock = "*"
 requests = "*"
-
+selenium = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
