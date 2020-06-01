@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 from selenium import webdriver
 from dotenv import load_dotenv
-load_dotenv(dotenv_path=Path('../.env'))
+load_dotenv(dotenv_path=Path('src/.env'))
 
 
 def test_scores_service(app_url):
