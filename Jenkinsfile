@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build docker image') {
             steps {
-                echo $(( ( RANDOM % 999 )  + 1 )) > /app/src/Scores.txt
+                sh 'echo $(( ( RANDOM % 999 )  + 1 )) > /app/src/Scores.txt'
                 sh 'docker build -t arielgordon/WorldOfGames .'
         }
         stage('Run docker image') {
