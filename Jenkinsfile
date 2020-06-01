@@ -17,7 +17,13 @@ pipeline {
         }
         stage('Run docker image') {
             steps {
-                sh 'docker run -d -p 8777:5000  arielgordon/worldofgames .'
+                sh 'docker run -d -p 8777:5000  arielgordon/worldofgames'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo APP_URL=http://localhost:8777 > src/.env'
+                sh 'python3 src/test/e2e.py'
             }
         }
     }
