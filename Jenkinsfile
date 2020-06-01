@@ -12,12 +12,12 @@ pipeline {
         stage('Build docker image') {
             steps {
                 sh 'echo $(( ( RANDOM % 999 )  + 1 )) > src/Scores.txt'
-                sh 'docker build -t arielgordon/WorldOfGames .'
+                sh 'docker build -t arielgordon/worldofgames .'
             }
         }
         stage('Run docker image') {
             steps {
-                sh 'docker run -d -p 8777:5000  arielgordon/WorldOfGames .'
+                sh 'docker run -d -p 8777:5000  arielgordon/worldofgames .'
             }
         }
     }
