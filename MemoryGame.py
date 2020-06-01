@@ -14,13 +14,17 @@ class MemoryGame(Game):
 
     @staticmethod
     def get_description():
-        return "Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back"
+        return "Memory Game - a sequence of numbers will appear for 1"
+        + "second and you have to guess it back"
 
     def _generate_sequence(self):
         return [random.randint(1, 101) for i in range(self.difficulty)]
 
     def get_user_input(self):
-        return [get_choise(1, 101, "enter {num} num: ".format(num=i+1)) for i in range(self.difficulty)]
+        return [
+            get_choise(1, 101, "enter {num} num: ".format(num=i+1))
+            for i in range(self.difficulty)
+        ]
 
     def _is_list_equal(self, userList):
         equal = True
