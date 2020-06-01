@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'cd src && pipenv lock --requirements > requirements.txt'
+                sh 'cd src && pipenv lock --python /usr/lib/python3.7 --requirements > requirements.txt'
                 sh 'pip install -r requirements.txt'
                 sh 'echo APP_URL=http://localhost:8777 > src/.env'
                 sh 'python3 tests/e2e.py'
