@@ -23,7 +23,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo APP_URL=http://localhost:8777 > src/.env'
-                sh 'python3 src/test/e2e.py'
+                sh 'python3 src/tests/e2e.py'
             }
         }
     }
