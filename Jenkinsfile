@@ -5,12 +5,13 @@ pipeline {
             steps {
                 git(
                     url: 'https://github.com/Arielgordon123/WorldOfGames.git',
-                    branch: 'master'
+                    branch: 'test'
                     )
             }
         }
         stage('Build docker image') {
             steps {
+                sh 'ls'
                 sh 'echo $(( ( RANDOM % 999 )  + 1 )) > /app/src/Scores.txt'
                 sh 'docker build -t arielgordon/WorldOfGames .'
             }
