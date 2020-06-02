@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 from selenium import webdriver
 from dotenv import load_dotenv
-load_dotenv(dotenv_path=Path('../.env'))
+load_dotenv(dotenv_path=Path('src/.env'))
 
 
 def test_scores_service(app_url):
@@ -16,8 +16,8 @@ def test_scores_service(app_url):
         chrome_browser.get(app_url)
         score = chrome_browser.find_element_by_id("score")
         result = 1 <= int(score.text) and int(score.text) <= 1000
-    finally:
-        chrome_browser.quit()
+    except Exception as e:
+        print(e)
     return result
 
 
